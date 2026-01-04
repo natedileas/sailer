@@ -1,3 +1,4 @@
+from datetime import datetime
 import sqlite3
 import base64
 
@@ -25,42 +26,74 @@ def get_db():
     return db
 
 
-@app.teardown_appcontext
-def close_connection(exception):
-    db = getattr(g, "_database", None)
-    if db is not None:
-        db.close()
+@app.route("/")
+def index():
+    return "Hello, World!"
 
 
-# @app.route("/")
-# def index():
-#     return "Hello, World!"
+# route ideas
+# public
+# /         project intro, info. latest thumbnail, map, etc
+# /detail   latest, with command stream,
+# /log      blog
+# private
+# /cnc      like detail view, but with send command interface.
 
 
-@app.route("/telemetry", methods=["POST"])
-def telemetry():
+def auth():
     if request.headers.get("Authorization"):
         auth = request.headers["Authorization"]
         if not auth.startswith("Basic "):
-            return "Need basic auth", 401
+            return False
         user, passw = (
             base64.b64decode(auth.replace("Basic ", "")).decode("utf-8").split(":")
         )
         if user != "me" or passw != app.config["BOAT_PASS"]:
-            return "nice try", 401
-        # else good
+            return False
+
+        return True
     else:
+        return False
+
+
+@app.route("/command", methods=["POST"])
+def command():
+    if not auth():
+        return "Need basic auth", 401
+    db = get_db()
+    cur = db.cursor()
+    cur.execute(
+        "insert into command (dt, command) values (?,?);",
+        (datetime.now().isoformat(), request.get_data()),
+    )
+    cur.close
+    return "", 200
+
+
+@app.route("/telemetry", methods=["POST"])
+def telemetry():
+    if not auth():
         return "Need basic auth", 401
 
-    cur = get_db().cursor()
-    cur.execute("insert into telemetry (raw) values (?);", request.get_data())
+    db = get_db()
+    cur = db.cursor()
+    cur.execute(
+        "insert into telemetry (dt, raw) values (?,?);",
+        (datetime.now().isoformat(), request.get_data()),
+    )
 
-    # TODO parse the telemetry
-
-    command = cur.execute("select (command) from command order date by limit 1;")
+    # TODO parse the telemetry, put it in dedicated tables (images, att, weather, etc)
+    command = cur.execute(
+        "select (command) from command order by dt limit 1;"
+    ).fetchone()
+    # TODO mark this command acted?
+    cur.close()
+    if not command:
+        command = ""
 
     return command, 200
 
 
 if __name__ == "__main__":
+    init_db()
     app.run()
