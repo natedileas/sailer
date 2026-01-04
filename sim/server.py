@@ -1,8 +1,9 @@
 from datetime import datetime
+import os
 import sqlite3
 import base64
 
-from flask import Flask, request, g
+from flask import Flask, redirect, request, g, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
 DATABASE = "./db.sqlite"
@@ -35,7 +36,23 @@ def index():
 # public
 # /         project intro, info. latest thumbnail, map, etc
 # /detail   latest, with command stream,
-# /log      blog
+# /log/*      blog
+@app.route("/log/")
+def logs():
+    fp = app.config["LOG_DIR"]
+    return os.listdir(fp)
+
+
+@app.route("/log/<entry>")
+def log(entry):
+    fp = os.path.join(app.config["LOG_DIR"], entry)
+    if os.path.exists(fp):
+        with open(fp, "r") as f:
+            return f.read(), 200, {"Content-Type": "text/md"}
+    else:
+        return redirect(url_for("/"))
+
+
 # private
 # /cnc      like detail view, but with send command interface.
 
