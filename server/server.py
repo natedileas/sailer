@@ -4,9 +4,8 @@ import sqlite3
 import base64
 
 from flask import Flask, redirect, request, g, url_for
-from werkzeug.security import generate_password_hash, check_password_hash
 
-DATABASE = "./db.sqlite"
+DATABASE = os.path.abspath(os.path.join(__file__, "..", "db.sqlite"))
 
 app = Flask(__name__)
 app.config.from_pyfile("config.py")
@@ -35,7 +34,7 @@ def index():
 # route ideas
 # public
 # /         project intro, info. latest thumbnail, map, etc
-# /detail   latest, with command stream,
+# /detail   latest, with command stream, attittude, temp/pressure, etc
 # /log/*      blog
 @app.route("/log/")
 def logs():
