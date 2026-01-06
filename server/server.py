@@ -2,8 +2,10 @@ from datetime import datetime
 import os
 import sqlite3
 import base64
+import struct
+import logging
 
-from flask import Flask, redirect, request, g, url_for
+from flask import Flask, redirect, render_template, request, g, url_for
 
 DATABASE = os.path.abspath(os.path.join(__file__, "..", "db.sqlite"))
 
@@ -28,8 +30,11 @@ def get_db():
 
 @app.route("/")
 def index():
-    return "Hello, World!"
+    return render_template("index.html")
 
+@app.route("/detail")
+def detail():
+    return render_template("detail.html")
 
 # route ideas
 # public
@@ -75,7 +80,7 @@ def auth():
 @app.route("/command", methods=["POST"])
 def command():
     if not auth():
-        return "Need basic auth", 401
+        return "Need basic auth", 401, {"WWW-Authenticate": "Basic realm='your mom'"}
     db = get_db()
     cur = db.cursor()
     cur.execute(
@@ -98,10 +103,45 @@ def telemetry():
         (datetime.now().isoformat(), request.get_data()),
     )
 
-    # TODO parse the telemetry, put it in dedicated tables (images, att, weather, etc)
-    command = cur.execute(
-        "select (command) from command order by dt limit 1;"
-    ).fetchone()
+    # parse the telemetry, put it in dedicated tables (images, att, weather, etc)
+    for fname, filecontent in request.files.items():
+        comm_id = fname[6:12]
+        root, filetype = os.path.splitext(fname)
+        content = filecontent.stream.read()
+        logging.info("filetype: %s", filetype)
+        if filetype == ".slow":
+            for l in struct.iter_unpack(">3f", content):
+                cur.execute(
+                    "insert into slow (dt,comm_id,temp, humidity, battery) values (?,?,?,?,?);",
+                    (datetime.now().isoformat(), comm_id, *l),
+                )
+        elif filetype == ".fast":
+            for l in struct.iter_unpack(">6f3f3f", content):
+                # *a, ws, wd, compass, get_furl(), get_sheet(), get_rudder()
+                cur.execute(
+                    "insert into fast (dt,comm_id,att_x,att_y,att_z,att_dx,att_dy,att_dz, wind_spd, wind_dir, compass, furl, sheet,rudder) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
+                    (datetime.now().isoformat(), comm_id, *l),
+                )
+        elif filetype == ".once":
+            l = struct.unpack(">6IdI", content)
+            cur.execute(
+                "insert into once (dt, mission_id, comm_id, FURL_MAX, SHEET_FURL, RUDDER_CENTER, RECOVERY_COMM_INTERVAL, MAIN_SLEEP_INTERVAL, PICTURE_INTERVAL) values (?,?,?,?,?,?,?,?);",
+                (datetime.now().isoformat(), *l),
+            )
+        elif filetype == ".pic":
+            base64png = content  # TODO decode and turn into web-ready
+            cur.execute(
+                "insert into pics (dt,comm_id,raw,base64) values (?,?,?,?);",
+                (
+                    datetime.now().isoformat(),
+                    comm_id,
+                    content,
+                    base64png,
+                ),
+            )
+    db.commit()
+
+    command = cur.execute("select (command) from command order by dt asc;").fetchone()
     # TODO mark this command acted?
     cur.close()
     if not command:

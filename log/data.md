@@ -13,12 +13,12 @@ http post from robot to server at intervals
 
 ### request
 
-will be the data files built up over the last comm interval. multipart/form-data encoded.  since these are sampled at different intervals, just have a separate data file for each and concatenate them to the response. should result in less data overall. split into att/pos/motor (fast sample rate), temp/humid/pos/battery (slow sample rate), and once per comm (parameters, waypoints, other long term goals). Pictures as well. comm id (uint32) should be included in the file name.
+will be the data files built up over the last comm interval. multipart/form-data encoded.  since these are sampled at different intervals, just have a separate data file for each and concatenate them to the response. should result in less data overall. split into att/pos/motor (fast sample rate), temp/humid/pos/battery (slow sample rate), and once per comm (parameters, waypoints, other long term goals). Pictures as well. comm id (uint32) should be included in the file name. use http multi-part file upload with names like this: "data-{comm_id:06d}.{type}"
 
 #### volumetrics
 
-fast sample rate (1 per second): att (6x float), wind dir/spd (2x float), compass (1x float), motor ( 3x uint16) = 46 B, 27kB / 10 minutes
-slow sample rate ( 10 minutes): temp/humid/lat-lon/battery (5x float) = 10B
+fast sample rate (1 per second): att (6x float), wind dir/spd (2x float), compass (1x float),  = 40 B, 27kB / 10 minutes
+slow sample rate ( 10 minutes): temp/humid/lat-lon/battery (5x float),motor ( 3x uint16) = 18B
 once/comm rate: parameters (20x float?), commID (uint16),  = 40 B
 pictures (10 minutes): 640x480 uint8 = 300 kB
 

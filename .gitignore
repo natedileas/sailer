@@ -1,3 +1,4 @@
 sim/config.py
 *.pyc
 *.journal
+sim/data-*
