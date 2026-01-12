@@ -41,7 +41,7 @@ class Timer:
 furl = None
 sheet = None
 rudder = None
-slow_timer = Timer(10e9 * 10)  # 10 seconds # [nanoseconds]
+slow_timer = Timer(RECOVERY_COMM_INTERVAL * 1e9)  # seconds # [nanoseconds]
 fast_timer = Timer(10e8)  # .1 seconds # [nanoseconds]
 comm_timer = Timer(RECOVERY_COMM_INTERVAL * 1e9)  # [nanoseconds]
 picture_timer = Timer(PICTURE_INTERVAL * 1e9)
@@ -218,7 +218,7 @@ def comm(mode: Mode):
     log_once()
 
     files = {
-        os.path.basename(f): f
+        os.path.basename(f): open(f, "rb")
         for f in glob.glob(
             os.path.abspath(os.path.join(__file__, "..", f"data-{comm_id:06d}.*"))
         )

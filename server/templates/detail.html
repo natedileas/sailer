@@ -1,3 +1,128 @@
 <!doctype html>
 <title>Hello from Flask</title>
 <h1>Auto Sailer</h1>
+<h3>Comm window: {{ comm_id }} </h3>
+<!-- received values -->
+<details>
+    <summary>slow meta</summary>
+
+    <table>
+        <thead>
+            <th>dt</th>
+            <th>comm_id</th>
+            <th>temp</th>
+            <th>humidity</th>
+            <th>battery</th>
+        </thead>
+        <tbody>
+            {% if slow %}
+            {% for row in slow %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</details>
+
+<details>
+    <summary>fast meta</summary>
+
+    <table>
+        <thead>
+            <th>dt</th>
+            <th>comm_id</th>
+            <th>att_x</th>
+            <th>att_y</th>
+            <th>att_z</th>
+            <th>att_dx</th>
+            <th>att_dy</th>
+            <th>att_dz</th>
+            <th>wind_spd</th>
+            <th>wind_dir</th>
+            <th>compass</th>
+            <th>furl</th>
+            <th>sheet</th>
+            <th>rudder</th>
+        </thead>
+        {% if fast %}
+        <tbody>
+            {% for row in fast %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+                <td>{{row[9]}}</td>
+                <td>{{row[10]}}</td>
+                <td>{{row[11]}}</td>
+                <td>{{row[12]}}</td>
+                <td>{{row[13]}}</td>
+                <td>{{row[14]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    </table>
+</details>
+
+
+<details>
+    <summary>once meta</summary>
+
+    <table>
+        <thead>
+            <th>dt</th>
+            <th>comm_id</th>
+            <th>mission_id</th>
+            <th>FURL_MAX</th>
+            <th>SHEET_FURL</th>
+            <th>RUDDER_CENTER</th>
+            <th>RECOVERY_COMM_INTERVAL</th>
+            <th>MAIN_SLEEP_INTERVAL</th>
+            <th>PICTURE_INTERVAL</th>
+        </thead>
+        {% if once %}
+        <tbody>
+            {% for row in once %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    </table>
+</details>
+
+<details>
+    <summary>Pic</summary>
+    {% if pic %}
+    {% for p in pic %}
+    <img data="{{p.base64}}">
+    {% endfor %}
+    {% endif %}
+</details>
+<!-- commands -->
+<!-- time control -->
+
+<!-- att/angles visualizatrion -->
+<!-- map -->
+<!-- picture(s) -->

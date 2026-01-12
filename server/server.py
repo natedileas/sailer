@@ -5,6 +5,12 @@ import base64
 import struct
 import logging
 
+# Configure logging before creating the app
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s",
+)
+
 from flask import Flask, redirect, render_template, request, g, url_for
 
 DATABASE = os.path.abspath(os.path.join(__file__, "..", "db.sqlite"))
@@ -27,6 +33,12 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
     return db
 
+@app.teardown_appcontext
+def close_db(error):
+    """Closes the database again at the end of the request."""
+    db = g.pop("db", None)
+    if db is not None:
+        db.close()
 
 @app.route("/")
 def index():
@@ -34,7 +46,25 @@ def index():
 
 @app.route("/detail")
 def detail():
-    return render_template("detail.html")
+    db = get_db()
+    cur = db.cursor()
+    (commwindowid,) = cur.execute(
+        "select comm_id from once order by dt desc limit 1;"
+    ).fetchone()
+    slow = cur.execute(
+        "select * from slow where comm_id=?;", (commwindowid,)
+    ).fetchall()
+    fast = cur.execute(
+        "select * from fast where comm_id=?;", (commwindowid,)
+    ).fetchall()
+    once = cur.execute(
+        "select * from once where comm_id=?;", (commwindowid,)
+    ).fetchall()
+    pic = cur.execute("select * from pics where comm_id=?;", (commwindowid,)).fetchall()
+    db.close()
+    return render_template(
+        "detail.html", comm_id=commwindowid, slow=slow, fast=fast, once=once, pic=pic
+    )
 
 # route ideas
 # public
@@ -102,13 +132,18 @@ def telemetry():
         "insert into telemetry (dt, raw) values (?,?);",
         (datetime.now().isoformat(), request.get_data()),
     )
+    db.commit()
 
     # parse the telemetry, put it in dedicated tables (images, att, weather, etc)
     for fname, filecontent in request.files.items():
-        comm_id = fname[6:12]
+        comm_id = fname[5:11]
         root, filetype = os.path.splitext(fname)
         content = filecontent.stream.read()
-        logging.info("filetype: %s", filetype)
+        app.logger.debug("filetype: %s", filetype)
+        app.logger.debug("content_type : %s", filecontent.content_type)
+        app.logger.debug("content_length : %s", filecontent.content_length)
+        app.logger.debug("headers : %s", filecontent.headers)
+        app.logger.debug("unpacking content len: %s", len(content))
         if filetype == ".slow":
             for l in struct.iter_unpack(">3f", content):
                 cur.execute(
@@ -125,8 +160,8 @@ def telemetry():
         elif filetype == ".once":
             l = struct.unpack(">6IdI", content)
             cur.execute(
-                "insert into once (dt, mission_id, comm_id, FURL_MAX, SHEET_FURL, RUDDER_CENTER, RECOVERY_COMM_INTERVAL, MAIN_SLEEP_INTERVAL, PICTURE_INTERVAL) values (?,?,?,?,?,?,?,?);",
-                (datetime.now().isoformat(), *l),
+                "insert into once (dt, comm_id, mission_id, FURL_MAX, SHEET_FURL, RUDDER_CENTER, RECOVERY_COMM_INTERVAL, MAIN_SLEEP_INTERVAL, PICTURE_INTERVAL) values (?,?,?,?,?,?,?,?,?);",
+                (datetime.now().isoformat(), comm_id, l[0], *l[2:]),
             )
         elif filetype == ".pic":
             base64png = content  # TODO decode and turn into web-ready
