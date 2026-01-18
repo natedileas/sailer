@@ -3,6 +3,8 @@ import os
 import sqlite3
 import base64
 import struct
+
+from flask import Flask, redirect, render_template, request, g, url_for
 import logging
 
 # Configure logging before creating the app
@@ -10,8 +12,6 @@ logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s",
 )
-
-from flask import Flask, redirect, render_template, request, g, url_for
 
 DATABASE = os.path.abspath(os.path.join(__file__, "..", "db.sqlite"))
 

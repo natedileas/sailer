@@ -1,11 +1,16 @@
 # comm
+
+## transmission layer
+
+LTE-M, with sim.
+
 ## protocol 
 
 https
 
 ## auth
 
-basic. Should be fine with https. password will be a super secret.
+http basic. Should be fine with https. password will be a super secret.
 
 ## message
 
