@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="tiny" xmlns:cc="http://creativecommons.org/ns#" viewBox="0 0 2794 2159" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="279.4mm" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" height="215.9mm" xmlns:freecad="https://www.freecad.org/wiki/index.php?title=Svg_Namespace" version="1.2" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <title>FreeCAD SVG Export</title>
+ <desc>Drawing page: Page exported from FreeCAD document: sailor</desc>
+ <defs/>
+ <g inkscape:groupmode="layer" inkscape:label="TechDraw" id="Page">
+  <g style="stroke: none;" transform="scale(10.000000, 10.000000)" id="USLetter_Landscape.svg">
+   <defs id="defs1"/>
+   <!-- Working space 10 10 269 205 -->
+   <metadata id="metadata7">
+    <rdf:RDF>
+     <cc:Work rdf:about="">
+      <dc:format>image/svg+xml</dc:format>
+      <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+     </cc:Work>
+    </rdf:RDF>
+   </metadata>
+   <rect stroke-linecap="round" y="6.6789" color="#000000" fill="#fff" fill-opacity=".99608" width="254.36" height="202.54" stroke="#000" id="rectOutline" x="12.52" stroke-width=".65776">
+    <title id="title5119">OutLine</title>
+   </rect>
+   <path fill="none" stroke="#000" id="path4597" stroke-width=".66519" d="m139.64 6.9148v202.07"/>
+   <path fill="none" stroke="#000" id="path4593" stroke-width=".66519" d="m12.458 108.36h254.48"/>
+   <rect stroke-linecap="round" y="14.473" color="#000000" fill="#fff" fill-opacity=".99608" width="239.52" height="187.2" stroke="#000" id="rect3675" x="20.107" stroke-width=".6631"/>
+   <rect stroke-linecap="round" y="153.5" color="#000000" fill="#fff" fill-opacity=".99608" width="146.66" height="48.074" stroke="#000" id="rect2985" x="112.63" stroke-width=".79825"/>
+   <rect stroke-linecap="round" y="153.43" color="#000000" fill="#fff" fill-opacity=".99608" width="99.501" height="48.216" stroke="#000" id="rect3757" x="159.85" stroke-width=".65848"/>
+   <rect stroke-linecap="round" y="153.42" color="#000000" fill="#fff" fill-opacity=".99608" width="99.514" height="11.518" stroke="#000" id="rect3767" x="159.85" stroke-width=".64498"/>
+   <rect stroke-linecap="round" y="186.97" color="#000000" fill="#fff" fill-opacity=".99608" width="99.51" height="14.677" stroke="#000" id="rect3868" x="159.85" stroke-width=".64866"/>
+   <rect stroke-linecap="round" y="186.95" color="#000000" fill="#fff" fill-opacity=".99608" width="90.267" height="14.708" stroke="#000" id="rect3765" x="169.11" stroke-width=".61844"/>
+   <rect stroke-linecap="round" y="186.91" color="#000000" fill="#fff" fill-opacity=".99608" width="64.396" height="14.804" stroke="#000" id="rect3870" x="195.02" stroke-width=".52405"/>
+   <rect stroke-linecap="round" y="186.96" color="#000000" fill="#fff" fill-opacity=".99608" width="8.3202" height="14.687" stroke="#000" id="rect3872" x="251.04" stroke-width=".63869"/>
+   <rect stroke-linecap="round" y="196.21" color="#000000" fill="#fff" fill-opacity=".99608" width="99.525" height="5.4423" stroke="#000" id="rect3864" x="159.84" stroke-width=".6339"/>
+   <rect stroke-linecap="round" y="196.17" color="#000000" fill="#fff" fill-opacity=".99608" width="76" height="5.5196" stroke="#000" id="rect3763" x="183.4" stroke-width=".55786"/>
+   <rect stroke-linecap="round" y="196.1" color="#000000" fill="#fff" fill-opacity=".99608" width="40.811" height="5.6657" stroke="#000" id="rect3866" x="218.66" stroke-width=".41417"/>
+   <path fill="none" stroke="#000" id="path5183" stroke-width=".66519" d="m159.68 170.98h-47.003"/>
+   <path fill="none" stroke="#000" id="path5185" stroke-width=".26608" d="m145.36 171.12v9.0561"/>
+   <rect stroke-linecap="round" y="180.33" color="#000000" fill="#fff" fill-opacity=".99608" width="46.677" height="5.4509" stroke="#000" id="rect5966" x="112.96" stroke-width=".62538"/>
+   <rect stroke-linecap="round" y="185.55" color="#000000" fill="#fff" fill-opacity=".99608" width="46.677" height="5.4509" stroke="#000" id="rect6005" x="112.96" stroke-width=".62538"/>
+   <rect stroke-linecap="round" y="190.77" color="#000000" fill="#fff" fill-opacity=".99608" width="46.677" height="5.4509" stroke="#000" id="rect6007" x="112.96" stroke-width=".62538"/>
+   <rect stroke-linecap="round" y="195.98" color="#000000" fill="#fff" fill-opacity=".99608" width="46.677" height="5.4509" stroke="#000" id="rect6009" x="112.96" stroke-width=".62538"/>
+   <line x1="146.97" x2="157.8" y1="175.62" y2="175.62" stroke="#404040" id="line5117" stroke-dasharray="2.02174924, 0.28882132, 0.28882132, 0.28882132" stroke-width=".057764" stroke-dashoffset="17.5"/>
+   <line x1="155.09" x2="155.09" y1="172.54" y2="178.7" stroke="#404040" id="line5119" stroke-dasharray="2.02174924, 0.28882132, 0.28882132, 0.28882132" stroke-width=".057764" stroke-dashoffset="17.5"/>
+   <polygon fill="none" transform="matrix(.054174 0 0 .061592 146.99 172.78)" stroke="#000" id="polygon5123" points="10 90 10 10 90 30 90 70" stroke-width="2"/>
+   <ellipse fill="none" cy="175.86" ry="1.2318" rx="1.0835" stroke="#000" id="circle5125" stroke-width=".11553" cx="155.11"/>
+   <ellipse fill="none" cy="175.86" ry="2.4637" rx="2.167" stroke="#000" id="circle5127" stroke-width=".11553" cx="155.11"/>
+   <text font-weight="bold" y="153.68515" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4599" letter-spacing="0px" x="14.652468" stroke-width="1px" word-spacing="0px">
+    <tspan y="153.68515" style="line-height:1.25" font-family="sans-serif" id="tspan4601" font-size="5.3215px" x="14.652468">A</tspan>
+   </text>
+   <text font-weight="bold" y="55.709824" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4603" letter-spacing="0px" x="14.626484" stroke-width="1px" word-spacing="0px">
+    <tspan y="55.709824" style="line-height:1.25" font-family="sans-serif" id="tspan4605" font-size="5.3215px" x="14.626484">B</tspan>
+   </text>
+   <text font-weight="bold" y="153.68515" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4607" letter-spacing="0px" x="265.29684" stroke-width="1px" word-spacing="0px">
+    <tspan y="153.68515" style="line-height:1.25" font-family="sans-serif" id="tspan4609" font-size="5.3215px" x="265.29684">A</tspan>
+   </text>
+   <text font-weight="bold" y="55.709824" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4611" letter-spacing="0px" x="265.27084" stroke-width="1px" word-spacing="0px">
+    <tspan y="55.709824" style="line-height:1.25" font-family="sans-serif" id="tspan4613" font-size="5.3215px" x="265.27084">B</tspan>
+   </text>
+   <text font-weight="bold" y="204.16963" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4615" letter-spacing="0px" x="201.77625" stroke-width="1px" word-spacing="0px">
+    <tspan y="204.16963" style="line-height:1.25" font-family="sans-serif" id="tspan4617" font-size="5.3215px" x="201.77625">1</tspan>
+   </text>
+   <text font-weight="bold" y="204.20473" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4619" letter-spacing="0px" x="77.007645" stroke-width="1px" word-spacing="0px">
+    <tspan y="204.20473" style="line-height:1.25" font-family="sans-serif" id="tspan4621" font-size="5.3215px" x="77.007645">2</tspan>
+   </text>
+   <text font-weight="bold" y="12.062176" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4623" letter-spacing="0px" x="201.77625" stroke-width="1px" word-spacing="0px">
+    <tspan y="12.062176" style="line-height:1.25" font-family="sans-serif" id="tspan4625" font-size="5.3215px" x="201.77625">1</tspan>
+   </text>
+   <text font-weight="bold" y="12.097256" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" transform="scale(.98357 1.0167)" font-family="sans-serif" id="text4627" letter-spacing="0px" x="77.007645" stroke-width="1px" word-spacing="0px">
+    <tspan y="12.097256" style="line-height:1.25" font-family="sans-serif" id="tspan4629" font-size="5.3215px" x="77.007645">2</tspan>
+   </text>
+   <text y="181.99789" fill="#000000" style="line-height:0%" transform="scale(.98783 1.0123)" font-family="sans-serif" id="text3332" letter-spacing="0px" font-size="3.1144px" x="115.58746" word-spacing="0px">
+    <tspan y="181.99789" id="tspan3334" x="115.58746">Drawn:</tspan>
+   </text>
+   <text y="186.89949" fill="#000000" style="line-height:0%" transform="scale(.98783 1.0123)" font-family="sans-serif" id="text3348" letter-spacing="0px" font-size="3.1144px" x="115.58746" word-spacing="0px">
+    <tspan y="186.89949" font-family="sans-serif" id="tspan3350" x="115.58746">Checked:</tspan>
+   </text>
+   <text y="191.84903" fill="#000000" style="line-height:0%" transform="scale(.98783 1.0123)" font-family="sans-serif" id="text3364" letter-spacing="0px" font-size="3.1144px" x="115.58746" word-spacing="0px">
+    <tspan y="191.84903" font-family="sans-serif" id="tspan3366" x="115.58746">Approved:</tspan>
+   </text>
+   <text y="197.14716" fill="#000000" style="line-height:0%" transform="scale(.98783 1.0123)" font-family="sans-serif" id="text3380" letter-spacing="0px" font-size="3.1144px" x="115.58746" word-spacing="0px">
+    <tspan y="197.14716" font-family="sans-serif" id="tspan3382" x="115.58746">Approved:</tspan>
+   </text>
+   <text fill-rule="evenodd" y="157.8326" color="#000000" fill="#000000" style="line-height:0%" freecad:autofill="organization" font-family="sans-serif" freecad:editable="CompanyName" id="BlockACompany" font-size="3.2442px" x="163.36607">
+    <tspan y="157.8326" font-family="sans-serif" id="tspan6595" font-size="3.2442px" x="163.36607" xml:space="preserve">Company Name</tspan>
+   </text>
+   <text fill-rule="evenodd" y="162.85323" color="#000000" fill="#000000" style="line-height:0%" font-family="sans-serif" freecad:editable="CompanyAddress" id="BlockAAddress" font-size="3.2442px" x="163.19182">
+    <tspan y="162.85323" id="tspan6603" x="163.19182" xml:space="preserve">1234 Main St</tspan>
+   </text>
+   <text y="171.13162" fill="#000000" style="line-height:0%" freecad:autofill="title" font-family="sans-serif" freecad:editable="DrawingTitle1" id="BlockB Title1" letter-spacing="0px" font-size="5.2425px" x="163.88148" word-spacing="0px">
+    <tspan font-family="sans-serif" id="tspan4467" xml:space="preserve">sailor</tspan>
+   </text>
+   <text y="176.80217" fill="#000000" style="line-height:0%" font-family="sans" freecad:editable="DrawingTitle2" id="BlockBTitle2" letter-spacing="0px" x="164.08731" word-spacing="0px">
+    <tspan y="176.80217" style="line-height:1.25" id="tspan3762-4" font-size="3.1455px" x="164.08731" xml:space="preserve">Drawing Title 2</tspan>
+   </text>
+   <text y="182.7054" fill="#000000" style="line-height:0%" font-family="sans" freecad:editable="DrawingTitle3" id="BlockB Title3" letter-spacing="0px" x="164.08731" word-spacing="0px">
+    <tspan y="182.7054" style="line-height:1.25" id="tspan3766-5" font-size="3.1455px" x="164.08731" xml:space="preserve">Drawing Title 3</tspan>
+   </text>
+   <text y="193.43471" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" font-family="sans-serif" freecad:editable="DrawingNumber" id="BlockC DrawingNumber" letter-spacing="0px" x="198.43159" stroke-width="1px" word-spacing="0px">
+    <tspan y="193.43471" style="line-height:1.25" font-family="sans-serif" id="tspan3792-9" font-size="4.194px" x="198.43159" xml:space="preserve">Drawing Number</tspan>
+   </text>
+   <text y="193.06583" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" font-family="sans-serif" freecad:editable="Revision" id="BlockD Revision" letter-spacing="0px" x="252.18163" stroke-width="1px" word-spacing="0px">
+    <tspan y="193.06583" style="line-height:1.25" font-family="sans-serif" id="tspan3796-0" font-size="3.1455px" x="252.18163" xml:space="preserve">Rev</tspan>
+   </text>
+   <text fill-rule="evenodd" stroke-linecap="round" y="184.10947" color="#000000" fill="#000000" style="line-height:0%" freecad:autofill="author" font-family="sans-serif" freecad:editable="DrawnBy" id="BlockE DrawnBy" stroke-linejoin="round" x="134.63594" stroke-dashoffset="2">
+    <tspan y="184.10947" style="line-height:1.25" font-family="sans" id="tspan6969" font-size="2.9489px" x="134.63594" xml:space="preserve">Drawn By</tspan>
+   </text>
+   <text fill-rule="evenodd" y="189.3239" color="#000000" fill="#000000" style="line-height:0%" font-family="sans" freecad:editable="CheckedBy" id="BlockE CheckedBy" x="134.75978">
+    <tspan y="189.3239" style="line-height:1.25" id="tspan6973" font-size="2.9489px" x="134.75978" xml:space="preserve">Checked By</tspan>
+   </text>
+   <text fill-rule="evenodd" y="194.49297" color="#000000" fill="#000000" style="line-height:0%" font-family="sans" freecad:editable="Approved1" id="BlockE Approved1" x="134.90233">
+    <tspan y="194.49297" style="line-height:1.25" id="tspan6977" font-size="2.9489px" x="134.90233" xml:space="preserve">Approved 1</tspan>
+   </text>
+   <text fill-rule="evenodd" y="199.66203" color="#000000" fill="#000000" style="line-height:0%" font-family="sans" freecad:editable="Approved2" id="BlockE Approved2" x="134.90233">
+    <tspan y="199.66203" style="line-height:1.25" id="tspan6981" font-size="2.9489px" x="134.90233" xml:space="preserve">Approved 2</tspan>
+   </text>
+   <text y="200.17592" fill="#000000" style="line-height:0%" font-family="sans-serif" freecad:editable="scale" id="BlockH Scale" letter-spacing="0px" x="164.06125" word-spacing="0px">
+    <tspan y="200.17592" style="line-height:1.25" font-family="sans-serif" id="tspan3770-2" font-size="3.1455px" x="164.06125" xml:space="preserve">Scale</tspan>
+   </text>
+   <text y="193.31693" color="#000000" fill="#000000" style="line-height:0%;text-decoration-line:none;text-indent:0;text-transform:none" font-family="sans-serif" freecad:editable="Code" id="BlockI Code" letter-spacing="0px" x="172.15469" stroke-width="1px" word-spacing="0px">
+    <tspan y="193.31693" style="line-height:1.25" font-family="sans-serif" id="tspan3788-7" font-size="4.194px" x="172.15469" xml:space="preserve">Code</tspan>
+   </text>
+   <text font-weight="bold" y="193.14726" fill="#000000" style="line-height:0%" font-family="sans-serif" id="BlockJ Size" letter-spacing="0px" x="162.48712" word-spacing="0px">
+    <tspan y="193.14726" style="line-height:1.25" font-family="sans-serif" id="tspan3784" font-size="5.3215px" x="162.48712">A</tspan>
+   </text>
+   <text y="200.13062" fill="#000000" style="line-height:0%" font-family="sans-serif" freecad:editable="Weight" id="BlockK Weight" letter-spacing="0px" font-size="3.1455px" x="189.79546" word-spacing="0px">
+    <tspan y="200.13062" style="line-height:1.25" id="tspan3774-9" x="189.79546" xml:space="preserve">Weight</tspan>
+    <tspan y="204.39665" style="line-height:1.25" id="tspan3776-8" x="189.79546"/>
+   </text>
+   <text y="200.17592" fill="#000000" style="line-height:0%" freecad:autofill="sheet" font-family="sans-serif" freecad:editable="Sheet" id="BlockL Sheet" letter-spacing="0px" x="225.1777" word-spacing="0px">
+    <tspan y="200.17592" style="line-height:1.25" font-family="sans-serif" id="tspan3780-0" font-size="3.1455px" x="225.1777" xml:space="preserve">1 / 1</tspan>
+   </text>
+  </g>
+  <g fill-rule="evenodd" stroke-linecap="square" fill="none" stroke="black" stroke-linejoin="bevel" id="DrawingContent" stroke-width="1"/>
+ </g>
+</svg>
