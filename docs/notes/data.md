@@ -47,3 +47,10 @@ Still working out a full list of commands and their arguments. The total volume 
 ### volumetrics
 
 less than 1 kB, unless we have a problem.
+
+
+# on-board comm
+
+I plan for the com/cam module and main boards to talk via uart. I think this can be accomplished with ease as long as the data rate is kept low. I plan for there to be 2-way transmission, data logging flowing up and basic commands flowing down, like commanded bearings and mode switches.
+
+The physical link will likely be a ethernet cable, cat 6 or similar. There will need to be a slip ring at the lower end of the mast

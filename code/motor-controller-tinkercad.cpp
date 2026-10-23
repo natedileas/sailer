@@ -1,6 +1,8 @@
 // C++ code
 //
 #include <avr/interrupt.h>
+#include <Wire.h>
+
 #define motorA 5
 #define motorB 6
   
@@ -8,6 +10,7 @@ const int ENCODER_A = 2;
 const int ENCODER_B = 3;
 const byte LOW_LIMIT_PIN = 13;
 const byte HIGH_LIMIT_PIN = 0xA0;
+const byte i2c_addr = 51;
 
 volatile int lastEncoded=0;
 volatile long encoderValue=0;
@@ -43,6 +46,21 @@ void setup()
   sei();
   
   Serial.begin(9600);
+  Wire.begin(i2c_addr);
+  Wire.onRequest(i2c_request);
+  Wire.onReceive(i2c_receive);
+}
+
+void i2c_receive(int numBytes) {
+  while (Wire.available()) {
+    // TODO if we are fully calibrated
+    float tgt = Wire.read(4);
+    target_angle = tgt;
+  }
+}
+
+void i2c_request(int numBytes) {
+  Wire.write((char*)current_angle);
 }
 
 ISR (PCINT0_vect) 
