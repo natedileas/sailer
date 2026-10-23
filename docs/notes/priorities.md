@@ -6,7 +6,7 @@
     [x] rudder base
     [x] mast head
     [-] elecronics package
-    [-] overall
+    [-] overall 
     [ ] position feedback; pot or limit switches?
  [x] fix mast worm gear attachment
  [x] use mcmaster cad files instead of freecad gears/bearings

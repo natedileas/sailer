@@ -1,8 +1,15 @@
 create table if not exists telemetry (dt text, -- iso8601
 raw blob);
 
-create table if not exists command (dt text, -- iso8601
-command text);
+create table if not exists command (
+    dt_created text,
+    -- iso8601
+    command text,
+    dt_sent text,
+    -- iso8601
+    dt_ack text,
+    -- iso8601
+);
 
 create table if not exists slow (
     dt text,
