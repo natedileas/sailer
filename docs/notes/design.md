@@ -5,7 +5,7 @@ Robotic RC sailboat which can operate autonomously in lake ontario with a maximu
 # subsystems
 ## power
 
-Solar power with a lithium battery bank. MVP is a flexible COTS 20-30W panel of dimensions compatible with the hull with usb output, directly connected to the bank input. Battery bank MVP is a COTS battery bank, approx 50Ah for 5-12V outputs, with usb in and out. cracking the case and soldering leads to the power button and status leds might be a good idea for reliable battery status and operations.
+Solar power with a lithium battery bank. MVP is a flexible COTS 20-30W panel of dimensions compatible with the hull. Battery bank MVP is a lifepo4 4S battery bank, approx >20Ah. A solar charger moule would be good with an integrated coulomb counter/fuel guage ic for charge status
 
 ## comm
 
